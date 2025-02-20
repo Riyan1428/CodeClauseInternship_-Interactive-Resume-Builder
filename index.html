@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <line x1="10" y1="9" x2="8" y2="9"/>
+          </svg>
+          <h1>Resume Builder Tool</h1>
+        </div>
+        <button id="exportBtn" class="export-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Export PDF
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="tabs">
+        <button id="editTab" class="tab active">Edit</button>
+        <button id="previewTab" class="tab">Preview</button>
+      </div>
+
+      <div class="content">
+        <div id="editPanel" class="panel edit-panel">
+          <form id="resumeForm">
+            <section class="form-section">
+              <h2>Personal Information</h2>
+              <div class="grid-2">
+                <div class="input-group">
+                  <input type="text" id="name" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                  <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                  <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                </div>
+                <div class="input-group">
+                  <input type="text" id="location" name="location" placeholder="Location" required>
+                </div>
+              </div>
+              <div class="input-group">
+                <textarea id="summary" name="summary" placeholder="Professional Summary" rows="4"></textarea>
+              </div>
+            </section>
+
+            <section class="form-section">
+              <div class="section-header">
+                <h2>Experience</h2>
+                <button type="button" id="addExperience" class="add-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                  </svg>
+                  Add Experience
+                </button>
+              </div>
+              <div id="experienceList"></div>
+            </section>
+
+            <section class="form-section">
+              <div class="section-header">
+                <h2>Education</h2>
+                <button type="button" id="addEducation" class="add-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                  </svg>
+                  Add Education
+                </button>
+              </div>
+              <div id="educationList"></div>
+            </section>
+
+            <section class="form-section">
+              <div class="section-header">
+                <h2>Skills</h2>
+                <button type="button" id="addSkill" class="add-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                  </svg>
+                  Add Skill
+                </button>
+              </div>
+              <div id="skillsList" class="skills-list"></div>
+            </section>
+          </form>
+        </div>
+
+        <div id="previewPanel" class="panel preview-panel hidden">
+          <div id="resumePreview" class="resume-preview"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
